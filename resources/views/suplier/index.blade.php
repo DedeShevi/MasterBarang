@@ -41,18 +41,22 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach($supliers as $suplier)
                                 <tr>
-                                    <td>PT GANTENK DOANK</td>
-                                    <td>JEPANG</td>
-                                  <td>Gantenk doank@gmail.com</td>
-                                    <td>+62 23111222</td>
+                                    <td>{{$suplier->name}}</td>
+                                    <td>{{$suplier->alamat}}</td>
+                                  <td>{{$suplier->email}}</td>
+                                    <td>{{$suplier->phone}}</td>
                                     <td>
-                                        <form action="">
-                                            <a href="{{route('suplier.edit')}}" class="btn btn-outline-warning btn-sm">Edit</a>
+                                        <form action="{{route('suplier.delete', $suplier->id)}}" method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                            <a href="{{route('suplier.edit', $suplier->id)}}" class="btn btn-outline-warning btn-sm">Edit</a>
                                             <button class="btn btn-outline-danger btn-sm">Delete</button>
                                         </form>
                                     </td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

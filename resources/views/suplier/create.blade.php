@@ -1,32 +1,35 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class='container'>
+<div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                            <from action="" method="post">
+                            <form action="{{route('suplier.store')}}" method="post">
+                            
+                                @csrf
+                            
                                 <div class="form-group">
-                                    <label for="kode_barang">Nama Suplier</label>
-                                    <input type="text" name="Nama Suplier" id="Nama Suplier" class="form-control">
+                                    <label for="name">Nama Suplier</label>
+                                    <input type="text" name="name" id="nama_barang" class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <label for="nama_barang">Alamat</label>
-                                    <input type="text" name="Alamat" id="Alamat" class="form-control">
+                                    <label for="alamat">Alamat</label>
+                                    <input type="text" name="alamat" id="alamat" class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <label for="nama_barang">Email</label>
-                                    <input type="text" name="Email" id="Email" class="form-control">
+                                    <label for="email">Email</label>
+                                    <input type="email" name="email" id="email" class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <label for="nama_barang">Phone</label>
-                                    <input type="text" name="Phone" id="Phone" class="form-control">
+                                    <label for="phone">Phone</label>
+                                    <input type="text" name="phone" id="phone" class="form-control">
                                 </div>
                                 <div>
                                     <button class="btn btn-outline-info btn-block">Simpan</button>
                                 </div>
-                        </from>
+                        </form>
                     </div>
                 </div>
             </div>
